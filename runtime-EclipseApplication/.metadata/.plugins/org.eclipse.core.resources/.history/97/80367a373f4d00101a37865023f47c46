@@ -1,0 +1,115 @@
+-- @path petrinet=file:/home/n7student/new-eclipse-workspace/n7.petrinet/model/petrinet.ecore
+-- @path simplepdl=file:/home/n7student/new-eclipse-workspace/n7.simplePDL/simplepdl.ecore
+
+module simplePDLToPetrinet;
+create OUT : petrinet from IN : simplepdl;
+
+rule Process2petrinet {
+	from process : simplepdl!Process
+	to petrinet : petrinet!petrinet(
+		name <- process.name,
+		petrinetElements <- petrinet!petrinetElement.allInstancesFrom('OUT')
+	)
+}
+
+rule WD {
+	from wd : simplepdl!WorkDefinition
+	to start_place : petrinet!Place(token <- 1, name <- wd.name + '_start'),
+	   arc1 : petrinet!Arc(
+			fromNode <- start_place,
+			transition <- starting_transition,
+			weight <- 1,
+			ArcType <- #NORMAL,
+			direction <- #P2T,
+			name <- ''
+	   ),
+	   starting_transition : petrinet!Transition(name <- wd.name + '_starting'),
+	   arc2 : petrinet!Arc(
+			place <- active_place,
+			transition <- starting_transition,
+			weight <- 1,
+			type <- #NORMAL,
+			direction <- #T2P,
+			name <- ''
+	   ),
+	   active_place : petrinet!Place(nbJetons <- 0, name <- wd.name + '_active'),
+	   arc3 : petrinet!Arc(
+			place <- active_place,
+			transition <- finishing_transition,
+			weight <- 1,
+			type <- #NORMAL,
+			direction <- #P2T,
+			name <- ''
+	   ),
+	   finishing_transition : petrinet!Transition(name <- wd.name + '_finishing'),
+	   arc4 : petrinet!Arc(
+			place <- finished_place,
+			transition <- finishing_transition,
+			weight <- 1,
+			type <- #NORMAL,
+			direction <- #T2P,
+			name <- ''
+	   ),
+	   finished_place : petrinet!Place(nbJetons <- 0, name <- wd.name + '_finished'),
+	   arc5 : petrinet!Arc(
+			place <- started_place,
+			transition <- starting_transition,
+			weight <- 1,
+			type <- #NORMAL,
+			direction <- #T2P,
+			name <- ''
+	   ),
+	   started_place : petrinet!Place(nbJetons <- 0, name <- wd.name + '_started')
+}
+
+helper context simplepdl!WorkSequence
+def: eventTypePlace() : String =
+    if self.linkType = #startToStart or self.linkType = #finishToStart then
+        'started_place'
+    else
+        'finished_place'
+    endif;
+helper context simplepdl!WorkSequence
+def: eventTypeTransition() : String =
+    if self.linkType = #startToStart or self.linkType = #finishToStart then
+        'starting_transition'
+    else
+        'finishing_transition'
+    endif;
+
+rule WS {
+	from ws : simplepdl!WorkSequence
+	to readarc : petrinet!Arc(
+		place <- thisModule.resolveTemp(ws.predecessor, ws.eventTypePlace()),
+		transition <- thisModule.resolveTemp(ws.successor, ws.eventTypeTransition()),
+		weight <- 1,
+		type <- #READ,
+		direction <- #P2T,
+		name <- ''
+	)
+}
+
+rule R {
+	from res : simplepdl!Ressource
+	to place : petrinet!Place(nbJetons <- res.totalQuantity, name <- res.name)
+}
+
+rule NR {
+	from nr : simplepdl!NeededRessource
+	to arc_start : petrinet!Arc(
+			place <- thisModule.resolveTemp(nr.ressource, 'place'),
+			transition <- thisModule.resolveTemp(nr.refImmediateComposite(), 'starting_transition'),
+			weight <- nr.quantity,
+			type <- #NORMAL,
+			direction <- #P2T,
+			name <- ''
+	   ),
+	   arc_finish : petrinet!Arc(
+			place <- thisModule.resolveTemp(nr.ressource, 'place'),
+			transition <- thisModule.resolveTemp(nr.refImmediateComposite(), 'finishing_transition'),
+			weight <- nr.quantity,
+			type <- #NORMAL,
+			direction <- #T2P,
+			name <- ''
+	   )
+}

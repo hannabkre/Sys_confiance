@@ -1,0 +1,17 @@
+
+digraph FaireGateau {
+
+
+  MelangerIngredient -> CuireGateau [arrowhead=vee label="f2s"];
+
+
+  CuireGateau -> MangerGateau [arrowhead=vee label="f2s"];
+
+
+  cuisinier -> MelangerIngredient  [arrowhead=vee label="1"];
+  cuisinier -> CuireGateau  [arrowhead=vee label="1"];
+  four -> CuireGateau  [arrowhead=vee label="1"];
+  gourmand -> MangerGateau  [arrowhead=vee label="1"];
+
+}
+

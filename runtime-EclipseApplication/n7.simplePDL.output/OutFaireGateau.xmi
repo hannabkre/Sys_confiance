@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<simplepdl:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplepdl="http://simplepdl" name="FaireGateau">
+  <processElements xsi:type="simplepdl:Ressource" name="cuisinier" quantity="1"/>
+  <processElements xsi:type="simplepdl:Ressource" name="gourmand" quantity="1"/>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToSuccessors="//@processElements.5" name="MelangerIngredient">
+    <utilise quantity="1" ressource="//@processElements.0"/>
+  </processElements>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@processElements.5" linksToSuccessors="//@processElements.6" name="CuireGateau">
+    <utilise quantity="1" ressource="//@processElements.0"/>
+    <utilise quantity="1" ressource="//@processElements.8"/>
+  </processElements>
+  <processElements xsi:type="simplepdl:WorkDefinition" linksToPredecessors="//@processElements.6" name="MangerGateau">
+    <utilise quantity="1" ressource="//@processElements.1"/>
+  </processElements>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToStart" predecessor="//@processElements.2" successor="//@processElements.3"/>
+  <processElements xsi:type="simplepdl:WorkSequence" linkType="finishToStart" predecessor="//@processElements.3" successor="//@processElements.4"/>
+  <processElements xsi:type="simplepdl:Guidance" text="Ne mangez pas le gâteau avant qu'il soit cuit !"/>
+  <processElements xsi:type="simplepdl:Ressource" name="four" quantity="1"/>
+</simplepdl:Process>

@@ -1,0 +1,205 @@
+package n7.Petrinet.validation;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import n7.Petrinet.Arc;
+import n7.Petrinet.Petrinet;
+import n7.Petrinet.Place;
+import n7.Petrinet.PetrinetElement;
+import n7.Petrinet.Transition;
+import n7.Petrinet.TimeInterval;
+import n7.Petrinet.Node;
+import n7.Petrinet.Direction;
+import n7.Petrinet.PetrinetPackage;
+import n7.Petrinet.util.PetrinetSwitch;
+import n7.Petrinet.validation.ValidationResult;
+
+
+/**
+ * Cette classe effectue la validation d'un modèle de réseau de Pétri.
+ * Elle utilise le mécanisme de visite (Switch) généré par EMF pour
+ * vérifier que les objets du modèle respectent les contraintes structurelles
+ * et sémantiques définies par les exigences du projet (R2.1 à R2.6).
+ * 
+ * @author -
+ */
+public class PetrinetValidator extends PetrinetSwitch<Boolean> {
+
+	/**
+	 * Expression régulière qui correspond à un identifiant bien formé.
+	 */
+	private static final String IDENT_REGEX = "^[A-Za-z_][A-Za-z0-9_]*$";
+	
+	/**
+	 * Résultat de la validation (état interne réinitialisé à chaque nouvelle validation).
+	 */
+	private ValidationResult result = null;
+	
+	/**
+	 * Construire un validateur
+	 */
+	public PetrinetValidator() {}
+
+    /**
+     * Lance la validation sur tous les objets contenus dans la ressource.
+     * 
+     * @param resource La ressource contenant un ou plusieurs objets Petrinet
+     * @return un objet ValidationResult listant toutes les erreurs détectées
+     */
+    public ValidationResult validate(Resource resource) {
+        this.result = new ValidationResult();
+
+        for (EObject obj : resource.getContents()) {
+            this.doSwitch(obj); // visite de chaque objet racine
+        }
+
+        return result;
+    }
+
+    /**
+     * Validation d'un objet Petrinet (réseau de Pétri complet).
+     * 
+     * @param net le réseau à valider
+     * @return null
+     */
+    @Override
+    public Boolean casePetrinet(Petrinet net) {
+        // Le nom du réseau est obligatoire
+        this.result.recordIfFailed(
+            net.getName() != null && net.getName().matches(IDENT_REGEX),
+            net,
+            "Le nom du réseau de Pétri ne respecte pas les conventions Java"
+        );
+
+     // Visite
+     		for (PetrinetElement pe : net.getPetrinetElements()) {
+     			this.doSwitch(pe);
+     		}
+     		
+     		return null;
+    }
+
+    /**
+     * Validation d'une place.
+     * 
+     * @param p la place à valider
+     * @return null
+     */
+    @Override
+    public Boolean casePlace(Place p) {
+        // Nom obligatoire
+        result.recordIfFailed(
+            p.getName() != null && !p.getName().isBlank(),
+            p,
+            "Une place doit avoir un nom non vide"
+        );
+
+        // Marquage ≥ 0
+        result.recordIfFailed(
+            p.getToken() >= 0,
+            p,
+            "Le marquage initial d'une place doit être ≥ 0"
+        );
+
+        return null;
+    }
+
+    /**
+     * Validation d'une transition.
+     * 
+     * @param t la transition à valider
+     * @return null
+     */
+    @Override
+    public Boolean caseTransition(Transition t) {
+        // Nom obligatoire
+        result.recordIfFailed(
+            t.getName() != null && !t.getName().isBlank(),
+            t,
+            "Une transition doit avoir un nom non vide"
+        );
+
+        // Vérification éventuelle de l'intervalle de temps
+        TimeInterval interval = t.getTimeInterval();
+        if (interval != null) {
+            // Borne inférieure ≥ 0
+            result.recordIfFailed(
+                interval.getLowerBound() >= 0,
+                t,
+                "La borne inférieure de l'intervalle doit être ≥ 0"
+            );
+
+            // Si borne sup définie, elle doit être ≥ à la borne inférieure
+            if (interval.isSetUpperBound()) {
+                result.recordIfFailed(
+                    interval.getUpperBound() >= interval.getLowerBound(),
+                    t,
+                    "La borne supérieure doit être ≥ à la borne inférieure"
+                );
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Validation d'un arc (normal ou ReadArc).
+     * 
+     * @param arc l'arc à valider
+     * @return null
+     */
+    @Override
+    public Boolean caseArc(Arc arc) {
+        // Poids > 0
+        result.recordIfFailed(
+            arc.getWeight() > 0,
+            arc,
+            "Le poids d’un arc doit être strictement positif"
+        );
+
+        EObject source = arc.getFromNode();
+        EObject target = arc.getToNode();
+
+        // Vérifie qu'un arc relie une place à une transition (ou inversement)
+        boolean valid =
+            (source instanceof Place && target instanceof Transition) ||
+            (source instanceof Transition && target instanceof Place);
+
+        result.recordIfFailed(
+            valid,
+            arc,
+            "Un arc doit relier une place à une transition (ou l’inverse)"
+        );
+
+        // Vérifie la cohérence avec l'attribut direction
+        Direction declaredDirection = arc.getDirection();
+
+        boolean directionIsCorrect =
+            (declaredDirection == Direction.P2T && source instanceof Place && target instanceof Transition) ||
+            (declaredDirection == Direction.T2P && source instanceof Transition && target instanceof Place);
+        
+        System.out.println("Arc from: " + source.getClass().getSimpleName() + " to: " + target.getClass().getSimpleName() + " direction: " + arc.getDirection());
+
+
+        result.recordIfFailed(
+            directionIsCorrect,
+            arc,
+            "La direction déclarée de l’arc ne correspond pas à sa structure réelle"
+        );
+
+        return null;
+    }
+
+
+    /**
+     * Méthode appelée par défaut si aucune autre méthode ne correspond.
+     * 
+     * @param object objet inconnu ou non géré
+     * @return null
+     */
+    @Override
+    public Boolean defaultCase(EObject object) {
+        return null;
+    }
+}
+

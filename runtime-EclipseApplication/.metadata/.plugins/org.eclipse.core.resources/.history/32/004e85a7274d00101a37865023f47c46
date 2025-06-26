@@ -1,0 +1,6 @@
+-- @path petrinet=file:/home/n7student/new-eclipse-workspace/n7.petrinet/model/petrinet.ecore
+-- @path simplepdl=file:/home/n7student/new-eclipse-workspace/n7.simplePDL/SimplePDL.ecore
+
+module simplePDLToPetrinet;
+create OUT : petrinet from IN : simplepdl;
+

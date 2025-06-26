@@ -1,0 +1,203 @@
+/**
+ */
+package n7.petrinet.impl;
+
+import n7.petrinet.petrinet;
+import n7.petrinet.PetrinetElement;
+import n7.petrinet.PetrinetPackage;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
+/**
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Element</b></em>'. <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ * <li>{@link n7.petrinet.impl.PetrinetElementImpl#getPetrinet
+ * <em>petrinet</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class PetrinetElementImpl extends MinimalEObjectImpl.Container implements PetrinetElement {
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected PetrinetElementImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return PetrinetPackage.Literals.Petrinet_ELEMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public petrinet getPetrinet() {
+		if (eContainerFeatureID() != PetrinetPackage.Petrinet_ELEMENT__Petrinet)
+			return null;
+		return (petrinet) eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public NotificationChain basicSetPetrinet(petrinet newPetrinet, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject) newPetrinet, PetrinetPackage.Petrinet_ELEMENT__Petrinet, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void setPetrinet(petrinet newPetrinet) {
+		if (newPetrinet != eInternalContainer()
+				|| (eContainerFeatureID() != PetrinetPackage.Petrinet_ELEMENT__Petrinet && newPetrinet != null)) {
+			if (EcoreUtil.isAncestor(this, newPetrinet))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newPetrinet != null)
+				msgs = ((InternalEObject) newPetrinet).eInverseAdd(this, PetrinetPackage.Petrinet__Petrinet_ELEMENTS,
+						petrinet.class, msgs);
+			msgs = basicSetPetrinet(newPetrinet, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetPackage.Petrinet_ELEMENT__Petrinet,
+					newPetrinet, newPetrinet));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case PetrinetPackage.Petrinet_ELEMENT__Petrinet:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetPetrinet((petrinet) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case PetrinetPackage.Petrinet_ELEMENT__Petrinet:
+			return basicSetPetrinet(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+		case PetrinetPackage.Petrinet_ELEMENT__Petrinet:
+			return eInternalContainer().eInverseRemove(this, PetrinetPackage.Petrinet__Petrinet_ELEMENTS,
+					petrinet.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case PetrinetPackage.Petrinet_ELEMENT__Petrinet:
+			return getPetrinet();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case PetrinetPackage.Petrinet_ELEMENT__Petrinet:
+			setPetrinet((petrinet) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case PetrinetPackage.Petrinet_ELEMENT__Petrinet:
+			setPetrinet((petrinet) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case PetrinetPackage.Petrinet_ELEMENT__Petrinet:
+			return getPetrinet() != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+} // PetrinetElementImpl

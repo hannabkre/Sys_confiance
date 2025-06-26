@@ -1,0 +1,7 @@
+digraph nghg {
+
+
+  place -> transition [arrowhead=vee label="normal"];
+
+
+}

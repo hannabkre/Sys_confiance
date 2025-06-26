@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:petrinet="http://www.example.org/petrinet" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_fx8DEEqFEfCEsYcuesNIpQ" selectedViews="_6bI50EqGEfCEsYcuesNIpQ" version="15.4.3.202406261640">
+    <semanticResources>Petrinet-ok-1.petrinet</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_6bI50EqGEfCEsYcuesNIpQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/n7.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_L01wkEqHEfCEsYcuesNIpQ" name="PetrinetDiagram" repPath="#_L0fLQEqHEfCEsYcuesNIpQ" changeId="1750060712231">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/n7.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']"/>
+        <target xmi:type="petrinet:Petrinet" href="Petrinet-ok-1.petrinet#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_L0fLQEqHEfCEsYcuesNIpQ">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_L1U4wEqHEfCEsYcuesNIpQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_L1U4wUqHEfCEsYcuesNIpQ" type="Sirius" element="_L0fLQEqHEfCEsYcuesNIpQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_mKfOoEqHEfCEsYcuesNIpQ" type="2001" element="_mJPRcEqHEfCEsYcuesNIpQ">
+          <children xmi:type="notation:Node" xmi:id="_mKi5AEqHEfCEsYcuesNIpQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_mKi5AUqHEfCEsYcuesNIpQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_mKkuMEqHEfCEsYcuesNIpQ" type="3016" element="_mJQfkEqHEfCEsYcuesNIpQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_mKkuMUqHEfCEsYcuesNIpQ" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mKkuMkqHEfCEsYcuesNIpQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_mKfOoUqHEfCEsYcuesNIpQ" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mKfOokqHEfCEsYcuesNIpQ" x="275" y="25" width="191" height="105"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_qLatcEqHEfCEsYcuesNIpQ" type="2001" element="_qJ-jAUqHEfCEsYcuesNIpQ">
+          <children xmi:type="notation:Node" xmi:id="_qLbUgEqHEfCEsYcuesNIpQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_qLbUgUqHEfCEsYcuesNIpQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qLb7kEqHEfCEsYcuesNIpQ" type="3003" element="_qJ_xIEqHEfCEsYcuesNIpQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qLb7kUqHEfCEsYcuesNIpQ" fontName="Noto Sans"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qLb7kkqHEfCEsYcuesNIpQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_qLatcUqHEfCEsYcuesNIpQ" fontName="Noto Sans" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qLatckqHEfCEsYcuesNIpQ" x="415" y="295" width="171" height="30"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_L1U4wkqHEfCEsYcuesNIpQ"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_L1c0kEqHEfCEsYcuesNIpQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_L1c0kUqHEfCEsYcuesNIpQ"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_mJPRcEqHEfCEsYcuesNIpQ" name="P1" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="petrinet:Place" href="Petrinet-ok-1.petrinet#//@petrinetElements.0"/>
+      <semanticElements xmi:type="petrinet:Place" href="Petrinet-ok-1.petrinet#//@petrinetElements.0"/>
+      <ownedStyle xmi:type="diagram:Ellipse" uid="_mJQfkEqHEfCEsYcuesNIpQ" labelSize="12" labelPosition="node">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/n7.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/n7.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='PlaceNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_qJ-jAUqHEfCEsYcuesNIpQ" name="T1" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="petrinet:Transition" href="Petrinet-ok-1.petrinet#//@petrinetElements.1"/>
+      <semanticElements xmi:type="petrinet:Transition" href="Petrinet-ok-1.petrinet#//@petrinetElements.1"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_qJ_xIEqHEfCEsYcuesNIpQ" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/n7.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='Transition']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/n7.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer/@nodeMappings[name='Transition']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/n7.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_L0rYgEqHEfCEsYcuesNIpQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/n7.petrinet.design/description/petrinet.odesign#//@ownedViewpoints[name='PetrinetViewpoint']/@ownedRepresentations[name='PetrinetDiagram']/@defaultLayer"/>
+    <target xmi:type="petrinet:Petrinet" href="Petrinet-ok-1.petrinet#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

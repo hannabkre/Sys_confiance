@@ -1,0 +1,4 @@
+process faireGateau {
+	r cuisinier q 1
+	
+}

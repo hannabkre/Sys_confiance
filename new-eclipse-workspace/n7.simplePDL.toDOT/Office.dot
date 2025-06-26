@@ -1,0 +1,27 @@
+
+digraph Office {
+
+
+  Conception -> RedacTest [arrowhead=vee label="f2f"];
+
+
+  Conception -> RedacTest [arrowhead=vee label="s2s"];
+
+
+  Conception -> Prog [arrowhead=vee label="f2s"];
+
+
+  Prog -> RedacTest [arrowhead=vee label="f2f"];
+
+
+  Prog -> RedacDoc [arrowhead=vee label="s2s"];
+
+
+  Prog -> RedacDoc [arrowhead=vee label="f2f"];
+
+
+  Ordinateurs -> Conception  [arrowhead=vee label="3"];
+  Ordinateurs -> RedacDoc  [arrowhead=vee label="2"];
+
+}
+

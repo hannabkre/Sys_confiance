@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated petrinet -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="petrinet.presentation.petrinetModelWizardID"
+            name="%_UI_petrinetModelWizard_label"
+            class="petrinet.presentation.petrinetModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/petrinetModelFile.gif">
+         <description>%_UI_petrinetModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated petrinet -->
+      <editor
+            id="petrinet.presentation.petrinetEditorID"
+            name="%_UI_petrinetEditor_label"
+            icon="icons/full/obj16/petrinetModelFile.gif"
+            extensions="petrinet"
+            class="petrinet.presentation.petrinetEditor"
+            contributorClass="petrinet.presentation.petrinetActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

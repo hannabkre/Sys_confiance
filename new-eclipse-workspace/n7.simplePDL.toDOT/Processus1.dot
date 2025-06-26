@@ -1,0 +1,12 @@
+
+digraph Processus1 {
+
+
+  WorkDefinition1 -> Workdefinition2 [arrowhead=vee label="f2f"];
+
+
+  WorkDefinition1 -> Workdefinition2 [arrowhead=vee label="s2s"];
+
+
+}
+

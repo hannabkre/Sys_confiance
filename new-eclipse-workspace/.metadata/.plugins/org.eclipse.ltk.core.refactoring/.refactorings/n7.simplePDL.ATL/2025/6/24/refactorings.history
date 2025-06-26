@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;n7.simplePDL.ATL/pdl2.atl&apos; to &apos;pdl1.atl&apos;" description="Rename resource &apos;pdl2.atl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pdl2.atl" name="pdl1.atl" stamp="1749735096550" updateReferences="true"/>
+</session>

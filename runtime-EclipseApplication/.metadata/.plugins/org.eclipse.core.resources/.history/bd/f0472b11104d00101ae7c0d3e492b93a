@@ -1,0 +1,18 @@
+process ex1 {
+	r ordinateur q 10
+	wd a {
+		useRessources : r ordinateur to a q 10
+	}
+	wd b {
+		useRessources : r ordinateur to b q 3
+	}
+	wd c {
+		useRessources : 
+	}
+	ws startToFinish from a to b
+	ws finishToStart from b to c
+	
+	
+}
+
+	

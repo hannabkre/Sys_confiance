@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pDL1:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pDL1="http://www.n7.fr/PDL1" name="FaireGateau">
+  <processElements xsi:type="pDL1:Ressource" name="cuisinier" quantity="1"/>
+  <processElements xsi:type="pDL1:Ressource" name="gourmand" quantity="1"/>
+  <processElements xsi:type="pDL1:WorkDefinition" name="MelangerIngredient">
+    <useRessources ressource="//@processElements.0" quantity="1"/>
+  </processElements>
+  <processElements xsi:type="pDL1:WorkDefinition" name="CuireGateau">
+    <useRessources ressource="//@processElements.0" quantity="1"/>
+  </processElements>
+  <processElements xsi:type="pDL1:WorkDefinition" name="MangerGateau">
+    <useRessources ressource="//@processElements.1" quantity="1"/>
+  </processElements>
+  <processElements xsi:type="pDL1:WorkSequence" linkType="finishToStart" predecessor="//@processElements.2" successor="//@processElements.3"/>
+  <processElements xsi:type="pDL1:WorkSequence" linkType="finishToStart" predecessor="//@processElements.3" successor="//@processElements.4"/>
+  <processElements xsi:type="pDL1:Guidance" texte="Ne mangez pas le g&#xe2;teau avant qu'il soit cuit !"/>
+</pDL1:Process>

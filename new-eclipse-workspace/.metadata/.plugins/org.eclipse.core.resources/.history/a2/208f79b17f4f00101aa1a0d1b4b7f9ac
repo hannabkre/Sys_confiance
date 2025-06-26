@@ -1,0 +1,63 @@
+/**
+ */
+package Petrinet;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Petrinet</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link Petrinet.Petrinet#getPetrinetElements <em>Petrinet Elements</em>}</li>
+ *   <li>{@link Petrinet.Petrinet#getName <em>Name</em>}</li>
+ * </ul>
+ *
+ * @see Petrinet.petrinetPackage#getPetrinet()
+ * @model
+ * @generated
+ */
+public interface Petrinet extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Petrinet Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link Petrinet.PetrinetElement}.
+	 * It is bidirectional and its opposite is '{@link Petrinet.PetrinetElement#getPetrinet <em>Petrinet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Petrinet Elements</em>' containment reference list.
+	 * @see Petrinet.petrinetPackage#getPetrinet_PetrinetElements()
+	 * @see Petrinet.PetrinetElement#getPetrinet
+	 * @model opposite="Petrinet" containment="true"
+	 * @generated
+	 */
+	EList<PetrinetElement> getPetrinetElements();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see Petrinet.petrinetPackage#getPetrinet_Name()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link Petrinet.Petrinet#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+} // Petrinet

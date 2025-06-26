@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;n7.simplePDL.samples/developpement.simplepdl&apos; to &apos;developpement.petrinet&apos;" description="Rename resource &apos;developpement.simplepdl&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="developpement.simplepdl" name="developpement.petrinet" stamp="1750059961856" updateReferences="true"/>
+</session>

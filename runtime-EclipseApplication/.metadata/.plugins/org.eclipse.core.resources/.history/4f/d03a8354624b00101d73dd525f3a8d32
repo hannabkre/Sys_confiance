@@ -1,0 +1,12 @@
+process ex1 {
+	elements :
+	wd a
+	wd b
+	wd c
+	ws startToFinish from a to b
+	ws finishToStart from b to c
+	r ordinateur q 10
+	useRessources : 
+	r ordinateur to a q 3
+	
+}

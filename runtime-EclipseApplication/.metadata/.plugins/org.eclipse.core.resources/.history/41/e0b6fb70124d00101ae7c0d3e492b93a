@@ -1,0 +1,76 @@
+-- @path MM=file:/home/n7student/new-eclipse-workspace/n7.pdl1/model/generated/PDL1.ecore
+-- @path MM1=file:/home/n7student/new-eclipse-workspace/n7.simplePDL/SimplePDL.ecore
+
+module pdl1;
+create OUT : MM1 from IN : pdl1;
+
+-- Rule 1 : Process
+rule Process2Process {
+  from
+    p : pdl1!Process
+  to
+    sp : simplepdl!Process (
+      name <- p.name,
+      processElements <- p.processElements
+    )
+}
+
+-- Rule 2 : WorkDefinition
+rule WD2WorkDefinition {
+  from
+    wd : pdl1!WorkDefinition
+  to
+    swd : simplepdl!WorkDefinition (
+      name <- wd.name,
+      process <- wd.eContainer(), -- parent Process
+      uses <- wd.useRessources
+    )
+}
+
+-- Rule 3 : WorkSequence
+rule WS2WorkSequence {
+  from
+    ws : pdl1!WorkSequence
+  to
+    sws : simplepdl!WorkSequence (
+      linkType <- ws.linkType,
+      predecessor <- ws.predecessor,
+      successor <- ws.successor,
+      process <- ws.eContainer()
+    )
+}
+
+-- Rule 4 : Ressource
+rule Ressource2Ressource {
+  from
+    r : pdl1!Ressource
+  to
+    sr : simplepdl!Ressource (
+      name <- r.name,
+      quantity <- r.quantity,
+      process <- r.eContainer()
+    )
+}
+
+-- Rule 5 : UseRessource
+rule UseRessource2UseRessource {
+  from
+    ur : pdl1!UseRessource
+  to
+    sur : simplepdl!UseRessource (
+      quantity <- ur.quantity,
+      activity <- ur.activity,
+      ressource <- ur.ressource
+    )
+}
+
+-- Rule 6 : Guidance
+rule Guidance2Guidance {
+  from
+    g : pdl1!Guidance
+  to
+    sg : simplepdl!Guidance (
+      text <- g.texte,
+      process <- g.eContainer()
+    )
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<petrinet:Petrinet
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:petrinet="http://petrinet"
+    name="nghg">
+  <petrinetElements
+      xsi:type="petrinet:Arc"
+      fromNode="//@petrinetElements.2"
+      toNode="//@petrinetElements.1"
+      weight="8"/>
+  <petrinetElements
+      xsi:type="petrinet:Transition"
+      outArc="//@petrinetElements.0"
+      name="transition"/>
+  <petrinetElements
+      xsi:type="petrinet:Place"
+      inArc="//@petrinetElements.0"
+      name="place"/>
+</petrinet:Petrinet>

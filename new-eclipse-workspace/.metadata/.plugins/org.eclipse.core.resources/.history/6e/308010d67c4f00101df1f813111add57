@@ -1,0 +1,48 @@
+/**
+ */
+package n7.petrinet;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Element</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link n7.petrinet.PetrinetElement#getPetrinet <em>Petrinet</em>}</li>
+ * </ul>
+ *
+ * @see n7.petrinet.PetrinetPackage#getPetrinetElement()
+ * @model
+ * @generated
+ */
+public interface PetrinetElement extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Petrinet</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link n7.petrinet.Petrinet#getPetrinetElements <em>Petrinet Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Petrinet</em>' container reference.
+	 * @see #setPetrinet(Petrinet)
+	 * @see n7.petrinet.PetrinetPackage#getPetrinetElement_Petrinet()
+	 * @see n7.petrinet.Petrinet#getPetrinetElements
+	 * @model opposite="PetrinetElements" required="true" transient="false"
+	 * @generated
+	 */
+	Petrinet getPetrinet();
+
+	/**
+	 * Sets the value of the '{@link n7.petrinet.PetrinetElement#getPetrinet <em>Petrinet</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Petrinet</em>' container reference.
+	 * @see #getPetrinet()
+	 * @generated
+	 */
+	void setPetrinet(Petrinet value);
+
+} // PetrinetElement

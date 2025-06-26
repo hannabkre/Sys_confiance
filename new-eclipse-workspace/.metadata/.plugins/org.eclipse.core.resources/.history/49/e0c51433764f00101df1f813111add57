@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module toDot('http://www.example.org/Petrinet')]
+
+
+[template publicPetrinettToDot(Petrinett :Petrinett)]
+[comment @main/]
+[file (Petrinett.name, false, 'UTF-8')]
+
+[/file]
+[/template]

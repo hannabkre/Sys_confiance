@@ -1,0 +1,17 @@
+-- @path pdl1=file:/home/n7student/new-eclipse-workspace/n7.pdl1/model/generated/PDL1.ecore
+-- @path simplepdl=file:/home/n7student/new-eclipse-workspace/n7.simplePDL/SimplePDL.ecore
+
+module pdl1;
+create OUT : simplepdl from IN : pdl1;
+
+-- Rule 1 : Process
+rule Process2Process {
+  from
+    p : pdl1!Process
+  to
+    sp : simplepdl!Process (
+      name <- p.name,
+      processElements <- p.processElements
+    )
+}
+

@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[module toDOT('http://simplepdl')]
+
+[template public generateDOT(p : Process)]
+[comment @main/]
+[file(p.name + '.dot', false, 'UTF-8')]
+digraph developpement {
+[for (e : ProcessElement | p.processElements)]
+[if (e.oclIsTypeOf(WorkSequence))]
+[let ws : WorkSequence = e.oclAsType(WorkSequence)]
+[ws.predecessor.name/] -> [ws.successor.name/] [arrowhead=vee label=[ws.linkType.toLabel()/]]
+[/let]
+[/if]
+[/for]
+}
+[/file]
+[/template]
+
+[query public toLabel(type : WorkSequenceType) : String =
+  if type = WorkSequenceType::startToStart then 's2s'
+  else if type = WorkSequenceType::startToFinish then 's2f'
+  else if type = WorkSequenceType::finishToStart then 'f2s'
+  else if type = WorkSequenceType::finishToFinish then 'f2f'
+  else 'unknown'
+  endif endif endif
+/]
+
+
+

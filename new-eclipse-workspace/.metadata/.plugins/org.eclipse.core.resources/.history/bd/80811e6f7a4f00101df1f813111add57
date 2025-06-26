@@ -1,0 +1,991 @@
+/**
+ */
+package n7.Petrinet;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
+ * <ul>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
+ * </ul>
+ * <!-- end-user-doc -->
+ * @see n7.Petrinet.petrinetFactory
+ * @model kind="package"
+ * @generated
+ */
+public interface petrinetPackage extends EPackage {
+	/**
+	 * The package name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNAME = "Petrinet";
+
+	/**
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_URI = "http://www.example.org/Petrinet";
+
+	/**
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_PREFIX = "Petrinet";
+
+	/**
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	petrinetPackage eINSTANCE = n7.Petrinet.impl.petrinetPackageImpl.init();
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.impl.PetrinetImpl <em>Petrinet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.impl.PetrinetImpl
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getPetrinet()
+	 * @generated
+	 */
+	int PETRINET = 0;
+
+	/**
+	 * The feature id for the '<em><b>Petrinet Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PETRINET__PETRINET_ELEMENTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PETRINET__NAME = 1;
+
+	/**
+	 * The number of structural features of the '<em>Petrinet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PETRINET_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Petrinet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PETRINET_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.impl.PetrinetElementImpl <em>Petrinet Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.impl.PetrinetElementImpl
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getPetrinetElement()
+	 * @generated
+	 */
+	int PETRINET_ELEMENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Petrinet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PETRINET_ELEMENT__PETRINET = 0;
+
+	/**
+	 * The number of structural features of the '<em>Petrinet Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PETRINET_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Petrinet Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PETRINET_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.impl.ArcImpl <em>Arc</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.impl.ArcImpl
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getArc()
+	 * @generated
+	 */
+	int ARC = 2;
+
+	/**
+	 * The feature id for the '<em><b>Petrinet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC__PETRINET = PETRINET_ELEMENT__PETRINET;
+
+	/**
+	 * The feature id for the '<em><b>From Node</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC__FROM_NODE = PETRINET_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>To Node</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC__TO_NODE = PETRINET_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Weight</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC__WEIGHT = PETRINET_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Arc Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC__ARC_TYPE = PETRINET_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC__DIRECTION = PETRINET_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Arc</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC_FEATURE_COUNT = PETRINET_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Arc</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARC_OPERATION_COUNT = PETRINET_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.impl.NodeImpl <em>Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.impl.NodeImpl
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getNode()
+	 * @generated
+	 */
+	int NODE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Petrinet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__PETRINET = PETRINET_ELEMENT__PETRINET;
+
+	/**
+	 * The feature id for the '<em><b>In Arc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__IN_ARC = PETRINET_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Out Arc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__OUT_ARC = PETRINET_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__NAME = PETRINET_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_FEATURE_COUNT = PETRINET_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Node</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODE_OPERATION_COUNT = PETRINET_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.impl.PlaceImpl <em>Place</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.impl.PlaceImpl
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getPlace()
+	 * @generated
+	 */
+	int PLACE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Petrinet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE__PETRINET = NODE__PETRINET;
+
+	/**
+	 * The feature id for the '<em><b>In Arc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE__IN_ARC = NODE__IN_ARC;
+
+	/**
+	 * The feature id for the '<em><b>Out Arc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE__OUT_ARC = NODE__OUT_ARC;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE__NAME = NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE__TOKEN = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Place</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Place</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLACE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.impl.TransitionImpl <em>Transition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.impl.TransitionImpl
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getTransition()
+	 * @generated
+	 */
+	int TRANSITION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Petrinet</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__PETRINET = NODE__PETRINET;
+
+	/**
+	 * The feature id for the '<em><b>In Arc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__IN_ARC = NODE__IN_ARC;
+
+	/**
+	 * The feature id for the '<em><b>Out Arc</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__OUT_ARC = NODE__OUT_ARC;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__NAME = NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Time Interval</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__TIME_INTERVAL = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Transition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Transition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.impl.TimeIntervalImpl
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getTimeInterval()
+	 * @generated
+	 */
+	int TIME_INTERVAL = 6;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL__LOWER_BOUND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL__UPPER_BOUND = 1;
+
+	/**
+	 * The number of structural features of the '<em>Time Interval</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Time Interval</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.ArcType <em>Arc Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.ArcType
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getArcType()
+	 * @generated
+	 */
+	int ARC_TYPE = 7;
+
+	/**
+	 * The meta object id for the '{@link n7.Petrinet.Direction <em>Direction</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see n7.Petrinet.Direction
+	 * @see n7.Petrinet.impl.petrinetPackageImpl#getDirection()
+	 * @generated
+	 */
+	int DIRECTION = 8;
+
+	/**
+	 * Returns the meta object for class '{@link n7.Petrinet.Petrinet <em>Petrinet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Petrinet</em>'.
+	 * @see n7.Petrinet.Petrinet
+	 * @generated
+	 */
+	EClass getPetrinet();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link n7.Petrinet.Petrinet#getPetrinetElements <em>Petrinet Elements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Petrinet Elements</em>'.
+	 * @see n7.Petrinet.Petrinet#getPetrinetElements()
+	 * @see #getPetrinet()
+	 * @generated
+	 */
+	EReference getPetrinet_PetrinetElements();
+
+	/**
+	 * Returns the meta object for the attribute '{@link n7.Petrinet.Petrinet#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see n7.Petrinet.Petrinet#getName()
+	 * @see #getPetrinet()
+	 * @generated
+	 */
+	EAttribute getPetrinet_Name();
+
+	/**
+	 * Returns the meta object for class '{@link n7.Petrinet.PetrinetElement <em>Petrinet Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Petrinet Element</em>'.
+	 * @see n7.Petrinet.PetrinetElement
+	 * @generated
+	 */
+	EClass getPetrinetElement();
+
+	/**
+	 * Returns the meta object for the container reference '{@link n7.Petrinet.PetrinetElement#getPetrinet <em>Petrinet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Petrinet</em>'.
+	 * @see n7.Petrinet.PetrinetElement#getPetrinet()
+	 * @see #getPetrinetElement()
+	 * @generated
+	 */
+	EReference getPetrinetElement_Petrinet();
+
+	/**
+	 * Returns the meta object for class '{@link n7.Petrinet.Arc <em>Arc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arc</em>'.
+	 * @see n7.Petrinet.Arc
+	 * @generated
+	 */
+	EClass getArc();
+
+	/**
+	 * Returns the meta object for the reference '{@link n7.Petrinet.Arc#getFromNode <em>From Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From Node</em>'.
+	 * @see n7.Petrinet.Arc#getFromNode()
+	 * @see #getArc()
+	 * @generated
+	 */
+	EReference getArc_FromNode();
+
+	/**
+	 * Returns the meta object for the reference '{@link n7.Petrinet.Arc#getToNode <em>To Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To Node</em>'.
+	 * @see n7.Petrinet.Arc#getToNode()
+	 * @see #getArc()
+	 * @generated
+	 */
+	EReference getArc_ToNode();
+
+	/**
+	 * Returns the meta object for the attribute '{@link n7.Petrinet.Arc#getWeight <em>Weight</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Weight</em>'.
+	 * @see n7.Petrinet.Arc#getWeight()
+	 * @see #getArc()
+	 * @generated
+	 */
+	EAttribute getArc_Weight();
+
+	/**
+	 * Returns the meta object for the attribute '{@link n7.Petrinet.Arc#getArcType <em>Arc Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Arc Type</em>'.
+	 * @see n7.Petrinet.Arc#getArcType()
+	 * @see #getArc()
+	 * @generated
+	 */
+	EAttribute getArc_ArcType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link n7.Petrinet.Arc#getDirection <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Direction</em>'.
+	 * @see n7.Petrinet.Arc#getDirection()
+	 * @see #getArc()
+	 * @generated
+	 */
+	EAttribute getArc_Direction();
+
+	/**
+	 * Returns the meta object for class '{@link n7.Petrinet.Node <em>Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Node</em>'.
+	 * @see n7.Petrinet.Node
+	 * @generated
+	 */
+	EClass getNode();
+
+	/**
+	 * Returns the meta object for the reference list '{@link n7.Petrinet.Node#getInArc <em>In Arc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>In Arc</em>'.
+	 * @see n7.Petrinet.Node#getInArc()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_InArc();
+
+	/**
+	 * Returns the meta object for the reference list '{@link n7.Petrinet.Node#getOutArc <em>Out Arc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Out Arc</em>'.
+	 * @see n7.Petrinet.Node#getOutArc()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_OutArc();
+
+	/**
+	 * Returns the meta object for the attribute '{@link n7.Petrinet.Node#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see n7.Petrinet.Node#getName()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EAttribute getNode_Name();
+
+	/**
+	 * Returns the meta object for class '{@link n7.Petrinet.Place <em>Place</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Place</em>'.
+	 * @see n7.Petrinet.Place
+	 * @generated
+	 */
+	EClass getPlace();
+
+	/**
+	 * Returns the meta object for the attribute '{@link n7.Petrinet.Place#getToken <em>Token</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Token</em>'.
+	 * @see n7.Petrinet.Place#getToken()
+	 * @see #getPlace()
+	 * @generated
+	 */
+	EAttribute getPlace_Token();
+
+	/**
+	 * Returns the meta object for class '{@link n7.Petrinet.Transition <em>Transition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Transition</em>'.
+	 * @see n7.Petrinet.Transition
+	 * @generated
+	 */
+	EClass getTransition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link n7.Petrinet.Transition#getTimeInterval <em>Time Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time Interval</em>'.
+	 * @see n7.Petrinet.Transition#getTimeInterval()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_TimeInterval();
+
+	/**
+	 * Returns the meta object for class '{@link n7.Petrinet.TimeInterval <em>Time Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time Interval</em>'.
+	 * @see n7.Petrinet.TimeInterval
+	 * @generated
+	 */
+	EClass getTimeInterval();
+
+	/**
+	 * Returns the meta object for the attribute '{@link n7.Petrinet.TimeInterval#getLowerBound <em>Lower Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lower Bound</em>'.
+	 * @see n7.Petrinet.TimeInterval#getLowerBound()
+	 * @see #getTimeInterval()
+	 * @generated
+	 */
+	EAttribute getTimeInterval_LowerBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link n7.Petrinet.TimeInterval#getUpperBound <em>Upper Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Upper Bound</em>'.
+	 * @see n7.Petrinet.TimeInterval#getUpperBound()
+	 * @see #getTimeInterval()
+	 * @generated
+	 */
+	EAttribute getTimeInterval_UpperBound();
+
+	/**
+	 * Returns the meta object for enum '{@link n7.Petrinet.ArcType <em>Arc Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Arc Type</em>'.
+	 * @see n7.Petrinet.ArcType
+	 * @generated
+	 */
+	EEnum getArcType();
+
+	/**
+	 * Returns the meta object for enum '{@link n7.Petrinet.Direction <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Direction</em>'.
+	 * @see n7.Petrinet.Direction
+	 * @generated
+	 */
+	EEnum getDirection();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	petrinetFactory getpetrinetFactory();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.impl.PetrinetImpl <em>Petrinet</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.impl.PetrinetImpl
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getPetrinet()
+		 * @generated
+		 */
+		EClass PETRINET = eINSTANCE.getPetrinet();
+
+		/**
+		 * The meta object literal for the '<em><b>Petrinet Elements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PETRINET__PETRINET_ELEMENTS = eINSTANCE.getPetrinet_PetrinetElements();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PETRINET__NAME = eINSTANCE.getPetrinet_Name();
+
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.impl.PetrinetElementImpl <em>Petrinet Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.impl.PetrinetElementImpl
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getPetrinetElement()
+		 * @generated
+		 */
+		EClass PETRINET_ELEMENT = eINSTANCE.getPetrinetElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Petrinet</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PETRINET_ELEMENT__PETRINET = eINSTANCE.getPetrinetElement_Petrinet();
+
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.impl.ArcImpl <em>Arc</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.impl.ArcImpl
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getArc()
+		 * @generated
+		 */
+		EClass ARC = eINSTANCE.getArc();
+
+		/**
+		 * The meta object literal for the '<em><b>From Node</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARC__FROM_NODE = eINSTANCE.getArc_FromNode();
+
+		/**
+		 * The meta object literal for the '<em><b>To Node</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARC__TO_NODE = eINSTANCE.getArc_ToNode();
+
+		/**
+		 * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARC__WEIGHT = eINSTANCE.getArc_Weight();
+
+		/**
+		 * The meta object literal for the '<em><b>Arc Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARC__ARC_TYPE = eINSTANCE.getArc_ArcType();
+
+		/**
+		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARC__DIRECTION = eINSTANCE.getArc_Direction();
+
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.impl.NodeImpl <em>Node</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.impl.NodeImpl
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getNode()
+		 * @generated
+		 */
+		EClass NODE = eINSTANCE.getNode();
+
+		/**
+		 * The meta object literal for the '<em><b>In Arc</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NODE__IN_ARC = eINSTANCE.getNode_InArc();
+
+		/**
+		 * The meta object literal for the '<em><b>Out Arc</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NODE__OUT_ARC = eINSTANCE.getNode_OutArc();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NODE__NAME = eINSTANCE.getNode_Name();
+
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.impl.PlaceImpl <em>Place</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.impl.PlaceImpl
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getPlace()
+		 * @generated
+		 */
+		EClass PLACE = eINSTANCE.getPlace();
+
+		/**
+		 * The meta object literal for the '<em><b>Token</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLACE__TOKEN = eINSTANCE.getPlace_Token();
+
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.impl.TransitionImpl <em>Transition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.impl.TransitionImpl
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getTransition()
+		 * @generated
+		 */
+		EClass TRANSITION = eINSTANCE.getTransition();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Interval</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__TIME_INTERVAL = eINSTANCE.getTransition_TimeInterval();
+
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.impl.TimeIntervalImpl
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getTimeInterval()
+		 * @generated
+		 */
+		EClass TIME_INTERVAL = eINSTANCE.getTimeInterval();
+
+		/**
+		 * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_INTERVAL__LOWER_BOUND = eINSTANCE.getTimeInterval_LowerBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_INTERVAL__UPPER_BOUND = eINSTANCE.getTimeInterval_UpperBound();
+
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.ArcType <em>Arc Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.ArcType
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getArcType()
+		 * @generated
+		 */
+		EEnum ARC_TYPE = eINSTANCE.getArcType();
+
+		/**
+		 * The meta object literal for the '{@link n7.Petrinet.Direction <em>Direction</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see n7.Petrinet.Direction
+		 * @see n7.Petrinet.impl.petrinetPackageImpl#getDirection()
+		 * @generated
+		 */
+		EEnum DIRECTION = eINSTANCE.getDirection();
+
+	}
+
+} //petrinetPackage

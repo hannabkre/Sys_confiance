@@ -1,0 +1,10 @@
+digraph Test {
+
+
+  P1 -> T1 [arrowhead=vee label="normal"];
+
+
+  T1 -> P1 [arrowhead=vee label="read"];
+
+
+}

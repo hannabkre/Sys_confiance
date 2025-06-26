@@ -1,0 +1,124 @@
+-- @path petrinet=file:/home/n7student/new-eclipse-workspace/n7.petrinet/model/petrinet.ecore
+-- @path simplepdl=file:/home/n7student/new-eclipse-workspace/n7.simplePDL/simplepdl.ecore
+
+module simplePDLToPetrinet;
+create OUT : petrinet from IN : simplepdl;
+
+-- Transformation d'un Process en Petrinet
+rule Process2Petrinet {
+    from
+        process : simplepdl!Process
+    to
+        petrinet : petrinet!Petrinet(
+            name <- process.name,
+            --petrinetElements <- process.workDefinitions->collect(wd | thisModule.resolveTemp(wd, 'wdElements'))->flatten()
+			petriNetElements <- petrinet!petrinetElements.allInstancesFrom('OUT')
+        )
+}
+
+-- Transformation d'un WorkDefinition en Places, Transitions et Arcs
+rule WD {
+    from
+        wd : simplepdl!WorkDefinition
+    to
+        start_place : petrinet!Place(
+            token <- 1,
+            name <- wd.name + '_start'
+        ),
+        starting_transition : petrinet!Transition(
+            name <- wd.name + '_starting'
+        ),
+        active_place : petrinet!Place(
+            token <- 0,
+            name <- wd.name + '_active'
+        ),
+        finishing_transition : petrinet!Transition(
+            name <- wd.name + '_finishing'
+        ),
+        finished_place : petrinet!Place(
+            token <- 0,
+            name <- wd.name + '_finished'
+        ),
+        started_place : petrinet!Place(
+            token <- 0,
+            name <- wd.name + '_started'
+        ),
+        arc1 : petrinet!Arc(
+            fromNode <- start_place,
+            toNode <- starting_transition,
+            weight <- 1,
+            arcType <- #normal,
+            direction <- #P2T
+        ),
+        arc2 : petrinet!Arc(
+            fromNode <- starting_transition,
+            toNode <- active_place,
+            weight <- 1,
+            arcType <- #normal,
+            direction <- #T2P
+        ),
+        arc3 : petrinet!Arc(
+            fromNode <- active_place,
+            toNode <- finishing_transition,
+            weight <- 1,
+            arcType <- #normal,
+            direction <- #P2T
+        ),
+        arc4 : petrinet!Arc(
+            fromNode <- finishing_transition,
+            toNode <- finished_place,
+            weight <- 1,
+            arcType <- #normal,
+            direction <- #T2P
+        ),
+        arc5 : petrinet!Arc(
+            fromNode <- started_place,
+            toNode <- starting_transition,
+            weight <- 1,
+            arcType <- #normal,
+            direction <- #P2T
+        )
+}
+
+rule WS {
+    from ws : simplepdl!WorkSequence
+    to readarc : petrinet!Arc(
+        fromNode <- thisModule.resolveTemp(ws.predecessor, 'WD_started_place'),
+        toNode <- thisModule.resolveTemp(ws.successor, 'WD_starting_transition'),
+        weight <- 1,
+        arcType <- #read,
+        direction <- #P2T
+    )
+}
+
+-- Transformation des Ressources en Places
+rule R {
+    from
+        res : simplepdl!Ressource
+    to
+        place : petrinet!Place(
+            token <- res.quantity,
+            name <- res.name
+        )
+}
+
+-- Transformation des UseRessource en Arcs
+rule UR {
+    from
+        nr : simplepdl!UseRessource
+    to
+        arc_start : petrinet!Arc(
+            fromNode <- thisModule.resolveTemp(nr.ressource, 'place'),
+            toNode <- thisModule.resolveTemp(nr.refImmediateComposite(), 'starting_transition'),
+            weight <- nr.quantity,
+            arcType <- #normal,
+            direction <- #P2T
+        ),
+        arc_finish : petrinet!Arc(
+            fromNode <- thisModule.resolveTemp(nr.ressource, 'place'),
+            toNode <- thisModule.resolveTemp(nr.refImmediateComposite(), 'finishing_transition'),
+            weight <- nr.quantity,
+            arcType <- #normal,
+            direction <- #T2P
+        )
+}

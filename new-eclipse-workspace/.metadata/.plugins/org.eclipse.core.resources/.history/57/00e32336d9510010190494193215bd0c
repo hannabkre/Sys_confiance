@@ -1,0 +1,21 @@
+digraph FaireGateau {
+
+    // Transitions en rectangle
+    MelangerIngredient_starting    MelangerIngredient_finishing    CuireGateau_starting    CuireGateau_finishing    MangerGateau_starting    MangerGateau_finishing
+    // Places en cercle
+    MelangerIngredient_start;
+    MelangerIngredient_active;
+    MelangerIngredient_finished;
+    CuireGateau_start;
+    CuireGateau_active;
+    CuireGateau_finished;
+    MangerGateau_start;
+    MangerGateau_active;
+    MangerGateau_finished;
+    cuisinier;
+    gourmand;
+    four;
+
+    // Arcs
+    MelangerIngredient_start -> MelangerIngredient_starting    MelangerIngredient_starting -> MelangerIngredient_active    MelangerIngredient_active -> MelangerIngredient_finishing    MelangerIngredient_finishing -> MelangerIngredient_finished    CuireGateau_start -> CuireGateau_starting    CuireGateau_starting -> CuireGateau_active    CuireGateau_active -> CuireGateau_finishing    CuireGateau_finishing -> CuireGateau_finished    MangerGateau_start -> MangerGateau_starting    MangerGateau_starting -> MangerGateau_active    MangerGateau_active -> MangerGateau_finishing    MangerGateau_finishing -> MangerGateau_finished    MelangerIngredient_finished -> CuireGateau_starting    CuireGateau_finished -> MangerGateau_starting    cuisinier -> MelangerIngredient_starting    MelangerIngredient_finishing -> cuisinier    cuisinier -> CuireGateau_starting    CuireGateau_finishing -> cuisinier    four -> CuireGateau_starting    CuireGateau_finishing -> four    gourmand -> MangerGateau_starting    MangerGateau_finishing -> gourmand
+}

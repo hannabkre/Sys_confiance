@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: n7.petrinet;singleton:=true
+Automatic-Module-Name: n7.petrinet
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package:
+ n7.petrinet,
+ n7.petrinet.impl,
+ n7.petrinet.util,
+ n7.petrinet.validation
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore.xmi
+Bundle-ActivationPolicy: lazy

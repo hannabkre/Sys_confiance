@@ -1,0 +1,42 @@
+/**
+ */
+package n7.petrinet;
+
+/**
+ * <!-- begin-user-doc --> A representation of the model object
+ * '<em><b>Transition</b></em>'. <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link n7.petrinet.Transition#getTimeInterval <em>Time Interval</em>}</li>
+ * </ul>
+ *
+ * @see n7.petrinet.petrinetPackage#getTransition()
+ * @model
+ * @generated
+ */
+public interface Transition extends Node {
+	/**
+	 * Returns the value of the '<em><b>Time Interval</b></em>' containment reference.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Interval</em>' containment reference.
+	 * @see #setTimeInterval(TimeInterval)
+	 * @see n7.petrinet.petrinetPackage#getTransition_TimeInterval()
+	 * @model containment="true"
+	 * @generated
+	 */
+	TimeInterval getTimeInterval();
+
+	/**
+	 * Sets the value of the '{@link n7.petrinet.Transition#getTimeInterval <em>Time Interval</em>}' containment reference.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @param value the new value of the '<em>Time Interval</em>' containment reference.
+	 * @see #getTimeInterval()
+	 * @generated
+	 */
+	void setTimeInterval(TimeInterval value);
+
+} // Transition

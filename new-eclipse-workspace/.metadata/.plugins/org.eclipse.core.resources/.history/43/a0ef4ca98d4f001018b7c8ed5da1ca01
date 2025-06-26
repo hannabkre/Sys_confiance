@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<petrinet:Petrinet
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:petrinet="http://petrinet">
+  <PetrinetElements
+      xsi:type="petrinet:Arc"
+      fromNode="//@PetrinetElements.2"
+      toNode="//@PetrinetElements.1"
+      weight="8"/>
+  <PetrinetElements
+      xsi:type="petrinet:Transition"
+      outArc="//@PetrinetElements.0"
+      name="transition"/>
+  <PetrinetElements
+      xsi:type="petrinet:Place"
+      inArc="//@PetrinetElements.0"
+      name="place"/>
+</petrinet:Petrinet>

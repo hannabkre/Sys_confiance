@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simplepdl:Process
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:simplepdl="http://simplepdl"
+    name="Office">
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      linksToSuccessors="//@processElements.4 //@processElements.5 //@processElements.6"
+      name="Conception">
+    <utilise ressource="//@processElements.11">
+      <quantity>3</quantity>
+    </utilise>
+  </processElements>
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      linksToPredecessors="//@processElements.8 //@processElements.9"
+      name="RedacDoc">
+    <utilise ressource="//@processElements.11">
+      <quantity>2</quantity>
+    </utilise>
+  </processElements>
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      linksToPredecessors="//@processElements.6"
+      linksToSuccessors="//@processElements.7 //@processElements.8 //@processElements.9"
+      name="Prog"/>
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      linksToPredecessors="//@processElements.4 //@processElements.5 //@processElements.7"
+      name="RedacTest"/>
+  <processElements
+      xsi:type="simplepdl:WorkSequence"
+      linkType="finishToFinish"
+      predecessor="//@processElements.0"
+      successor="//@processElements.3"/>
+  <processElements
+      xsi:type="simplepdl:WorkSequence"
+      predecessor="//@processElements.0"
+      successor="//@processElements.3"/>
+  <processElements
+      xsi:type="simplepdl:WorkSequence"
+      linkType="finishToStart"
+      predecessor="//@processElements.0"
+      successor="//@processElements.2"/>
+  <processElements
+      xsi:type="simplepdl:WorkSequence"
+      linkType="finishToFinish"
+      predecessor="//@processElements.2"
+      successor="//@processElements.3"/>
+  <processElements
+      xsi:type="simplepdl:WorkSequence"
+      predecessor="//@processElements.2"
+      successor="//@processElements.1"/>
+  <processElements
+      xsi:type="simplepdl:WorkSequence"
+      linkType="finishToFinish"
+      predecessor="//@processElements.2"
+      successor="//@processElements.1"/>
+  <processElements
+      xsi:type="simplepdl:Guidance"
+      element="//@processElements.0"
+      text="test guidance"/>
+  <processElements
+      xsi:type="simplepdl:Ressource"
+      name="Ordinateurs">
+    <quantity>10</quantity>
+  </processElements>
+</simplepdl:Process>

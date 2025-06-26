@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module toDot('http://petrinet')]
+
+[template public petriNetToDot(aPetrinet : Petrinet)]
+[comment @main/]
+[file (aPetrinet.name.concat('.dot'), false, 'UTF-8')]
+digraph [aPetrinet.name/] {
+
+[for (arc : Arc | aPetrinet.PetrinetElements->select(e | e.oclIsTypeOf(Arc))->collect(e | e.oclAsType(Arc)))]
+
+  [arc.fromNode.name/] -> [arc.toNode.name/] [ '[' /]arrowhead=vee label="[arc.arcType.toLabel()/]"[ ']' /];
+
+[/for]
+
+}
+[/file]
+[/template]
+
+[query public toLabel(at : ArcType) : String =
+
+	if at = ArcType::read then 'read'
+
+	else if at = ArcType::normal then 'normal'
+
+	else 'unknown'
+
+	endif
+
+	endif
+
+/]

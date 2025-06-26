@@ -1,0 +1,74 @@
+/**
+ */
+package n7.petrinet;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc --> A representation of the model object
+ * '<em><b>Node</b></em>'. <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link n7.petrinet.Node#getInArc <em>In Arc</em>}</li>
+ *   <li>{@link n7.petrinet.Node#getOutArc <em>Out Arc</em>}</li>
+ *   <li>{@link n7.petrinet.Node#getName <em>Name</em>}</li>
+ * </ul>
+ *
+ * @see n7.petrinet.petrinetPackage#getNode()
+ * @model
+ * @generated
+ */
+public interface Node extends PetrinetElement {
+	/**
+	 * Returns the value of the '<em><b>In Arc</b></em>' reference list. The list
+	 * contents are of type {@link n7.petrinet.Arc}. It is bidirectional and its
+	 * opposite is '{@link n7.petrinet.Arc#getFromNode <em>From Node</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>In Arc</em>' reference list.
+	 * @see n7.petrinet.PetrinetPackage#getNode_InArc()
+	 * @see n7.petrinet.Arc#getFromNode
+	 * @model opposite="fromNode"
+	 * @generated
+	 */
+	EList<Arc> getInArc();
+
+	/**
+	 * Returns the value of the '<em><b>Out Arc</b></em>' reference list. The list
+	 * contents are of type {@link n7.petrinet.Arc}. It is bidirectional and its
+	 * opposite is '{@link n7.petrinet.Arc#getToNode <em>To Node</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Out Arc</em>' reference list.
+	 * @see n7.petrinet.PetrinetPackage#getNode_OutArc()
+	 * @see n7.petrinet.Arc#getToNode
+	 * @model opposite="toNode"
+	 * @generated
+	 */
+	EList<Arc> getOutArc();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see n7.petrinet.PetrinetPackage#getNode_Name()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link n7.petrinet.Node#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
+
+} // Node

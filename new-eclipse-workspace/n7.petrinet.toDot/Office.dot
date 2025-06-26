@@ -1,0 +1,22 @@
+digraph Office {
+
+    // Transitions en rectangle
+    Conception_starting    Conception_finishing    RedacDoc_starting    RedacDoc_finishing    Prog_starting    Prog_finishing    RedacTest_starting    RedacTest_finishing
+    // Places en cercle
+    Conception_start;
+    Conception_active;
+    Conception_finished;
+    RedacDoc_start;
+    RedacDoc_active;
+    RedacDoc_finished;
+    Prog_start;
+    Prog_active;
+    Prog_finished;
+    RedacTest_start;
+    RedacTest_active;
+    RedacTest_finished;
+    Ordinateurs;
+
+    // Arcs
+    Conception_start -> Conception_starting    Conception_starting -> Conception_active    Conception_active -> Conception_finishing    Conception_finishing -> Conception_finished    RedacDoc_start -> RedacDoc_starting    RedacDoc_starting -> RedacDoc_active    RedacDoc_active -> RedacDoc_finishing    RedacDoc_finishing -> RedacDoc_finished    Prog_start -> Prog_starting    Prog_starting -> Prog_active    Prog_active -> Prog_finishing    Prog_finishing -> Prog_finished    RedacTest_start -> RedacTest_starting    RedacTest_starting -> RedacTest_active    RedacTest_active -> RedacTest_finishing    RedacTest_finishing -> RedacTest_finished    Conception_finishing -> RedacTest_finishing    Conception_starting -> RedacTest_starting    Conception_finishing -> Prog_starting    Prog_finishing -> RedacTest_finishing    Prog_starting -> RedacDoc_starting    Prog_finishing -> RedacDoc_finishing    Ordinateurs -> Conception_starting    Ordinateurs -> Conception_finishing    Ordinateurs -> RedacDoc_starting    Ordinateurs -> RedacDoc_finishing
+}

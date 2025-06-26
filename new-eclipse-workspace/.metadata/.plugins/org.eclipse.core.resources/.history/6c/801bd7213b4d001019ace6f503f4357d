@@ -1,0 +1,120 @@
+/**
+ */
+package n7.petrinet;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Arc</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link n7.petrinet.Arc#getFromNode <em>From Node</em>}</li>
+ *   <li>{@link n7.petrinet.Arc#getToNode <em>To Node</em>}</li>
+ *   <li>{@link n7.petrinet.Arc#getWeight <em>Weight</em>}</li>
+ *   <li>{@link n7.petrinet.Arc#getArcType <em>Arc Type</em>}</li>
+ * </ul>
+ *
+ * @see n7.petrinet.PetrinetPackage#getArc()
+ * @model
+ * @generated
+ */
+public interface Arc extends PetrinetElement {
+	/**
+	 * Returns the value of the '<em><b>From Node</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link n7.petrinet.Node#getInArc <em>In Arc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>From Node</em>' reference.
+	 * @see #setFromNode(Node)
+	 * @see n7.petrinet.PetrinetPackage#getArc_FromNode()
+	 * @see n7.petrinet.Node#getInArc
+	 * @model opposite="inArc" required="true"
+	 * @generated
+	 */
+	Node getFromNode();
+
+	/**
+	 * Sets the value of the '{@link n7.petrinet.Arc#getFromNode <em>From Node</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>From Node</em>' reference.
+	 * @see #getFromNode()
+	 * @generated
+	 */
+	void setFromNode(Node value);
+
+	/**
+	 * Returns the value of the '<em><b>To Node</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link n7.petrinet.Node#getOutArc <em>Out Arc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>To Node</em>' reference.
+	 * @see #setToNode(Node)
+	 * @see n7.petrinet.PetrinetPackage#getArc_ToNode()
+	 * @see n7.petrinet.Node#getOutArc
+	 * @model opposite="outArc" required="true"
+	 * @generated
+	 */
+	Node getToNode();
+
+	/**
+	 * Sets the value of the '{@link n7.petrinet.Arc#getToNode <em>To Node</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>To Node</em>' reference.
+	 * @see #getToNode()
+	 * @generated
+	 */
+	void setToNode(Node value);
+
+	/**
+	 * Returns the value of the '<em><b>Weight</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Weight</em>' attribute.
+	 * @see #setWeight(int)
+	 * @see n7.petrinet.PetrinetPackage#getArc_Weight()
+	 * @model required="true"
+	 * @generated
+	 */
+	int getWeight();
+
+	/**
+	 * Sets the value of the '{@link n7.petrinet.Arc#getWeight <em>Weight</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Weight</em>' attribute.
+	 * @see #getWeight()
+	 * @generated
+	 */
+	void setWeight(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Arc Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link n7.petrinet.ArcType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Arc Type</em>' attribute.
+	 * @see n7.petrinet.ArcType
+	 * @see #setArcType(ArcType)
+	 * @see n7.petrinet.PetrinetPackage#getArc_ArcType()
+	 * @model required="true"
+	 * @generated
+	 */
+	ArcType getArcType();
+
+	/**
+	 * Sets the value of the '{@link n7.petrinet.Arc#getArcType <em>Arc Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Arc Type</em>' attribute.
+	 * @see n7.petrinet.ArcType
+	 * @see #getArcType()
+	 * @generated
+	 */
+	void setArcType(ArcType value);
+
+} // Arc

@@ -1,0 +1,70 @@
+-- @path pdl1=file:/home/n7student/new-eclipse-workspace/n7.pdl1/model/generated/PDL1.ecore
+-- @path simplepdl=file:/home/n7student/new-eclipse-workspace/n7.simplePDL/SimplePDL.ecore
+
+module pdl1;
+create OUT : simplepdl from IN : pdl1;
+
+-- Ce helper n'a pas de contexte. Il est défini au niveau du module.
+helper def: convertLinkType(x : pdl1!WorkSequenceType) : simplepdl!WorkSequenceType =
+    if x = #startToStart then #startToStart
+    else if x = #startToFinish then #startToFinish
+    else if x = #finishToStart then #finishToStart
+    else #finishToFinish
+    endif endif endif; -- pas de SinonSi en ATL
+
+rule XProc2SProc {
+    from xp : pdl1!Process
+    to   sp : simplepdl!Process(
+        name <- xp.name,
+	-- Ajouter les enfants, sinon les autres éléments créés seront orphelins !
+        processElements <- xp.processElements)
+}
+
+rule XWD2SWD {
+    from xwd : pdl1!WorkDefinition
+    to   swd : simplepdl!WorkDefinition(
+    	name <- xwd.name,
+		"uses" <- xwd."uses"
+		
+		)
+}
+
+rule XWS2SWS {
+    from xws : pdl1!WorkSequence
+    to   sws : simplepdl!WorkSequence(
+            linkType <- thisModule.convertLinkType(xws.linkType), -- Appel à notre helper
+            predecessor <- xws.predecessor, -- Conversion/appel de règle implicite
+            successor <- xws.successor
+        )
+}
+
+rule caseGuidance {
+	from xg : pdl1!Guidance
+	to sg : simplepdl!Guidance(
+		text <- xg.texte
+		)
+}
+
+rule caseRessource {
+	from xr : pdl1!Ressource
+	to sr : simplepdl!Ressource(
+		name <- xr.name,
+		quantity <- xr.quantity
+		)
+}
+
+rule caseUseRessource {
+	from xu : pdl1!UseRessource
+	to su : simplepdl!UseRessource(
+		ressource <- xu.ressource,
+		quantity <- xu.quantity,
+		activity <- xu.eContainer()
+		)
+}
+
+
+
+
+
+
+

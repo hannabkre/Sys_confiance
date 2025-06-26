@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;n7.simplepdl.examples/output.xmi&apos; to &apos;convertedFromPDL1.xmi&apos;" description="Rename resource &apos;output.xmi&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="output.xmi" name="convertedFromPDL1.xmi" stamp="1750344350581" updateReferences="true"/>
+</session>

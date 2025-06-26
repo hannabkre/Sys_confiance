@@ -1,0 +1,6 @@
+-- @path simplepdl=file:/home/n7student/new-eclipse-workspace/n7.simplePDL/SimplePDL.ecore
+-- @path pdl1=file:/home/n7student/new-eclipse-workspace/n7.pdl1/model/generated/PDL1.ecore
+
+module pdl1;
+create OUT : simplepdl from IN : pdl1;
+

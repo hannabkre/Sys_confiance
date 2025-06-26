@@ -1,0 +1,22 @@
+-- @path pdl1=file:/home/n7student/new-eclipse-workspace/n7.pdl1/model/generated/PDL1.ecore
+-- @path simplepdl=file:/home/n7student/new-eclipse-workspace/n7.simplePDL/SimplePDL.ecore
+
+module pdl1;
+create OUT : simplepdl from IN : pdl1;
+
+-- Ce helper n'a pas de contexte. Il est défini au niveau du module.
+helper def: convertLinkType(x : pdl1!WorkSequenceType) : simplepdl!WorkSequenceType =
+    if x = #start2start then #s2s
+    else if x = #start2finish then #s2f
+    else if x = #finish2start then #f2s
+    else #f2f
+    endif endif endif; -- pas de SinonSi en ATL
+
+rule XProc2SProc {
+    from xp : pdl1!Process
+    to   sp : simplepdl!Process(
+        name <- xp.name,
+	-- Ajouter les enfants, sinon les autres éléments créés seront orphelins !
+        processElements <- xp.processElements)
+}
+

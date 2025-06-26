@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<pDL1:Process xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pDL1="http://www.n7.fr/PDL1" name="ex1">
+  <processElements xsi:type="pDL1:Ressource" name="ordinateur" quantity="10"/>
+  <processElements xsi:type="pDL1:WorkDefinition" name="a">
+    <useRessources ressource="//@processElements.0" quantity="7"/>
+  </processElements>
+  <processElements xsi:type="pDL1:WorkDefinition" name="b">
+    <useRessources ressource="//@processElements.0" quantity="3"/>
+  </processElements>
+  <processElements xsi:type="pDL1:WorkDefinition" name="c"/>
+  <processElements xsi:type="pDL1:WorkSequence" linkType="startToFinish" predecessor="//@processElements.1" successor="//@processElements.2"/>
+  <processElements xsi:type="pDL1:WorkSequence" linkType="finishToStart" predecessor="//@processElements.2" successor="//@processElements.3"/>
+  <processElements xsi:type="pDL1:Guidance" texte="a guidance"/>
+</pDL1:Process>

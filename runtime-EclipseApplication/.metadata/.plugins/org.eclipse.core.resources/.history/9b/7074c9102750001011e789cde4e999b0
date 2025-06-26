@@ -1,0 +1,16 @@
+process faireGateau {
+	r cuisinier q 1
+	r gourmand q 1
+	wd MelangerIngredient {
+		useRessources : r cuisinier q 1
+	}
+	wd CuireGateau {
+		useRessources : r cuisinier q 1
+	}
+	wd MangerGateau {
+		useRessources : r gourmand q 1
+	}
+	ws finishToStart from MelangerIngredient to CuireGateau
+	ws finishToStart from CuireGateau to MangerGateau
+	note "Ne mangez pas le gâteau avant qu'il soit cuit !"
+}

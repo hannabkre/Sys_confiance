@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="false"/>
+		<list key="findhistory">
+			<item value="petrinetelements"/>
+			<item value="petrinet"/>
+			<item value="Petrinet"/>
+			<item value="pref"/>
+			<item value="src"/>
+			<item value="n7.simple"/>
+			<item value="register"/>
+			<item value="registerPe"/>
+			<item value="arctype"/>
+			<item value="guidance"/>
+			<item value="stream"/>
+			<item value="notifyChange"/>
+			<item value="getText"/>
+		</list>
+	</section>
+</section>
